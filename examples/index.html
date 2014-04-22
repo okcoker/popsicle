@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Popsicle</title>
+</head>
+<body>
+    <p>You can style these links with css however you want.</p>
+    <a href="javascript:void(0)" data-network="facebook">Facebook</a>
+    <a href="javascript:void(0)" data-network="twitter">Twitter</a>
+    <a href="javascript:void(0)" data-network="pinterest">Pinterest</a>
+
+    <script src="../popsicle.js"></script>
+    <script>
+        var popsicle = new Popsicle();
+    </script>
+    <script src="../sticks/facebook.js"></script>
+    <script src="../sticks/twitter.js"></script>
+    <script src="../sticks/pinterest.js"></script>
+    <script>
+        var links = document.body.querySelectorAll('a[data-network]');
+
+        for (var i = 0, len = links.length; i < len; i++) {
+            var net = links[i].getAttribute('data-network');
+
+            (function(index, network) {
+                return links[index].onclick = function() {
+                    popsicle.open(network);
+                };
+            })(i, net);
+        }
+    </script>
+</body>
+</html>
