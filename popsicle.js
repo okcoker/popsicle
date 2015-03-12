@@ -1,6 +1,6 @@
 /*!
  * @author Sean Coker <sean@seancoker.com>
- * @version 0.1.0
+ * @version 0.1.1
  * @url https://github.com/okcoker/popsicle
  */
 
@@ -142,7 +142,7 @@
                 if (key === 'left' && options.window_options[key] === 'auto') {
                     options.window_options[key] = Math.max(0, (window.innerWidth - width) / 2);
                 }
-                if (key === 'height' && options.window_options[key] === 'auto') {
+                if (key === 'top' && options.window_options[key] === 'auto') {
                     options.window_options[key] = Math.max(0, (window.innerHeight - height) / 2);
                 }
                 extras += (',' + key + '=' + options.window_options[key]);
